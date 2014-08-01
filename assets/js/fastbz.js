@@ -24,7 +24,7 @@ $(document).ready(function() {
                 var newURL = URI("https://bugzilla.mozilla.org/buglist.cgi").search({"bug_id": buglist});
                 console.log(newURL.toString());
 
-                window.location.href = newURL.toString();
+                // window.location.href = newURL.toString();
             }
         );
     }
