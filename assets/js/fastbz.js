@@ -32,7 +32,7 @@ function loadURL (bzURL) {
 $(document).ready(function() {
     if (location.search !== '') {
         $( "#find" ).click(function () {
-            loadURL( $(this).val() );
+            loadURL( $("#quicksearch_main").val() );
         })  
     } else {
         loadURL( location.href );
