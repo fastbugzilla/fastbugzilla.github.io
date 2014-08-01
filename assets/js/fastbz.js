@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    if (location.search != '') {
+    if (location.search !== '') {
         var qb_query = '{"from":"public_bugs","select":["bug_id"]}';
         qb_query = $.parseJSON( qb_query );
 
