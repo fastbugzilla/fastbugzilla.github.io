@@ -61,7 +61,7 @@
                 Quick search
             ******************/
             if ("quicksearch" in params) {
-                newparams = "https://bugzilla.mozilla.org/buglist.cgi?v4="+quicksearch+"&o5=substring&f1=OP&o3=substring&v6="+quicksearch+"&o7=substring&list_id=10881499&f0=OP&f8=CP&v3="+quicksearch+"&o2=substring&o6=substring&v7="+quicksearch+"&f9=CP&f4=alias&v5="+quicksearch+"&query_format=advanced&j1=OR&f3=component&f2=product&o4=substring&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&f5=short_desc&f6=status_whiteboard&v2="+quicksearch+"&f7=cf_crash_signature";
+                newparams = "https://bugzilla.mozilla.org/buglist.cgi?v4="+quicksearch+"&o5=equals&f1=OP&o3=equals&v6="+quicksearch+"&o7=equals&list_id=10881499&f0=OP&f8=CP&v3="+quicksearch+"&o2=equals&o6=equals&v7="+quicksearch+"&f9=CP&f4=alias&v5="+quicksearch+"&query_format=advanced&j1=OR&f3=component&f2=product&o4=equals&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&f5=short_desc&f6=status_whiteboard&v2="+quicksearch+"&f7=cf_crash_signature";
                 var newparams = newparams.split('?')[1];
                 var params = URI.parseQuery( newparams );
             };
