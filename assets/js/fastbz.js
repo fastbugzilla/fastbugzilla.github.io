@@ -9,27 +9,27 @@ $(document).ready(function() {
         qb_query["esfilter"] = {"and": [{"range":{"expires_on":{"gte":(new Date).getTime()}}},qb_query["esfilter"] ]}
         console.log( qb_query );
 
-        // ESQueryRunner( 
-        //     qb_query, 
-        //     function( response ){ // Executes after data is returned from ES.
-        //         // Format the returned ElasticSearch data for Rickshaw compatibility
+        ESQueryRunner( 
+            qb_query, 
+            function( response ){ // Executes after data is returned from ES.
+                // Format the returned ElasticSearch data for Rickshaw compatibility
 
-        //         buglist = [];
+                buglist = [];
 
-        //         jQuery.each(response.list, function(i, id) {
-        //             buglist.push(id["bug_id"]);
-        //         });
-        //         console.log(buglist);
-        //         if (buglist.length == 0) {
-        //             return;
-        //         }
-        //         var newURL = URI("https://bugzilla.mozilla.org/buglist.cgi").search({"bug_id": buglist});
-        //         console.log(newURL.toString());
-        //         window.location.href = newURL.toString();
+                jQuery.each(response.list, function(i, id) {
+                    buglist.push(id["bug_id"]);
+                });
+                console.log(buglist);
+                if (buglist.length == 0) {
+                    return;
+                }
+                var newURL = URI("https://bugzilla.mozilla.org/buglist.cgi").search({"bug_id": buglist});
+                console.log(newURL.toString());
+                window.location.href = newURL.toString();
                 
 
-        //     }
-        // );
+            }
+        );
     }
 
     if (location.search != '') {
