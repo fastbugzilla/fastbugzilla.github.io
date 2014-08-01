@@ -108,37 +108,18 @@ function checkQuicksearch( form ) {
     <tr>
       <td>
         <h1 id="welcome"> Welcome to Bugzilla</h1>
-        <div class="intro"><a id="get_help" class="bz_common_actions"
-   href="page.cgi?id=get_help.html"><span>Get Help</span></a></div>
-        <a id="enter_bug" class="bz_common_actions"
-           href="enter_bug.cgi"><span>File a Bug</span></a>
-        <a id="query" class="bz_common_actions" 
-           href="query.cgi"><span>Search</span></a>
-        <a id="account" class="bz_common_actions"
-             href="userprefs.cgi"><span>User Preferences</span></a>
+        
 
-        <form id="quicksearchForm" name="quicksearchForm" action="buglist.cgi"
+        <form id="quicksearchForm" name="quicksearchForm" size="200" action="buglist.cgi"
               onsubmit="return checkQuicksearch(this);">
           <div>
             <input id="quicksearch_main" type="text" name="quicksearch"
               placeholder="Enter a bug number or some search terms"
               title="Quick Search">
             <input id="find" type="submit" value="Quick Search">
-            <ul class="additional_links" id="quicksearch_links">
-              <li>
-                <a href="page.cgi?id=quicksearch.html">Quick Search help</a>
-              </li>
-              <li class="bz_default_hidden" id="quicksearch_plugin">
-                |
-                <a href="javascript:window.external.AddSearchProvider('https://bugzilla.mozilla.org/search_plugin.cgi')">
-                 Install the Quick Search plugin
-                </a>
-              </li>
-            </ul>
 
           </div>
         </form>
-        <div class="outro"></div>
       </td>
     </tr>
   </table>
