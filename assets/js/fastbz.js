@@ -20,11 +20,12 @@ $(document).ready(function() {
                     buglist.push(id["bug_id"]);
                 });
                 console.log(buglist);
+                if (buglist.length > 0) {
+                    var newURL = URI("https://bugzilla.mozilla.org/buglist.cgi").search({"bug_id": buglist});
+                    console.log(newURL.toString());
+                    window.location.href = newURL.toString();
+                };
 
-                var newURL = URI("https://bugzilla.mozilla.org/buglist.cgi").search({"bug_id": buglist});
-                console.log(newURL.toString());
-
-                // window.location.href = newURL.toString();
             }
         );
     }
