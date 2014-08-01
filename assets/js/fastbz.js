@@ -30,12 +30,12 @@ function loadURL (bzURL) {
 
 
 $(document).ready(function() {
+    if (location.search != '') {
+        loadURL( location.href );
+    }
     $( "#find" ).click(function () {
         loadURL( $("#quicksearch_main").val() );
     });
-    if (location.search !== '') {
-        loadURL( location.href );
-    }
     
 })
 
