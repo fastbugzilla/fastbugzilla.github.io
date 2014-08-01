@@ -11,12 +11,232 @@
 
 </head>
 
-<body>
-
+<!-- <body> -->
+<!-- 
 <h1>Thanks for using fastbugzilla!</h1>
 <br>
-<h2>Note that data may be up to 10 minutes old, and queries are not garunteed to be accurate.</h2> 
+<h2>Note that data may be up to 10 minutes old, and queries are not garunteed to be accurate.</h2>  -->
+ <body onload=""
+        class="bugzilla-mozilla-org
+               skin-Mozilla yui-skin-sam">
 
+
+
+<div id="header">
+
+  <div class="wrapper">
+    <table border="0" cellspacing="0" cellpadding="0" id="titles">
+    <tr>
+      <td id="title">
+        <a href="./" title="Home">Bugzilla@Mozilla</a>
+      </td>
+      <td>
+      </td>
+      <td id="moz_login">
+          <ul class="links">
+            <li class="dropdown">
+              <span class="anchor">pranav.maddi&#64;gmail.com</span>
+              <ul>
+                  <li><a href="buglist.cgi?bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;emailtype1=exact&amp;email1=pranav.maddi%40gmail.com&amp;field0-0-0=bug_status&amp;type0-0-0=notequals&amp;value0-0-0=UNCONFIRMED&amp;field0-0-1=reporter&amp;type0-0-1=equals&amp;value0-0-1=pranav.maddi%40gmail.com">My Bugs</a></li>
+                <li><a href="user_profile">My Profile</a></li>
+                <li><a href="page.cgi?id=user_activity.html&amp;action=run&amp;sort=when&amp;who=pranav.maddi%40gmail.com">My Activity</a></li>
+                <li><a href="request.cgi?requester=pranav.maddi%40gmail.com&amp;requestee=pranav.maddi%40gmail.com&amp;do_union=1&amp;group=type&amp;action=queue">My Requests</a></li>
+                <li><a href="userprefs.cgi">Preferences</a></li>
+                  <li><a href="admin.cgi">Administration</a></li>
+                  <li><a href="index.cgi?logout=1">Log&nbsp;out</a></li>
+              </ul>
+            </li>
+          </ul>
+      </td>
+      <td id="moz_tab">
+        <a href="https://www.mozilla.org/" title="Mozilla - Home of the Mozilla Project">
+          <img src="skins/contrib/Mozilla/tabzilla.png" border="0" height="42" width="154"></a>
+      </td>
+    </tr>
+    </table>
+
+    
+      <div id="bugzilla_version">version 4.2.9+
+      </div>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form quicksearch_form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+    [<a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">help</a>]
+  </li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+<li><span class="separator"> | </span>
+    <a href="https://bugzilla.mozilla.org/page.cgi?id=mydashboard.html">My Dashboard</a></li><li><span class="separator"> | </span><a href="page.cgi?id=productdashboard.html">Product Dashboard</a></li>
+
+</ul>
+
+  </div>
+
+
+</div> 
+
+<div id="bugzilla-body">
+
+
+<script type="text/javascript">
+function checkQuicksearch( form ) {
+  if (form.quicksearch.value == '') {
+    alert('Please enter one or more search terms first.');
+    return false;
+  }
+  return true;
+}
+</script>
+
+
+<div id="page-index">
+  <table>
+    <tr>
+      <td>
+        <h1 id="welcome"> Welcome to Bugzilla</h1>
+        <div class="intro"><a id="get_help" class="bz_common_actions"
+   href="page.cgi?id=get_help.html"><span>Get Help</span></a></div>
+        <a id="enter_bug" class="bz_common_actions"
+           href="enter_bug.cgi"><span>File a Bug</span></a>
+        <a id="query" class="bz_common_actions" 
+           href="query.cgi"><span>Search</span></a>
+        <a id="account" class="bz_common_actions"
+             href="userprefs.cgi"><span>User Preferences</span></a>
+
+        <form id="quicksearchForm" name="quicksearchForm" action="buglist.cgi"
+              onsubmit="return checkQuicksearch(this);">
+          <div>
+            <input id="quicksearch_main" type="text" name="quicksearch"
+              placeholder="Enter a bug number or some search terms"
+              title="Quick Search">
+            <input id="find" type="submit" value="Quick Search">
+            <ul class="additional_links" id="quicksearch_links">
+              <li>
+                <a href="page.cgi?id=quicksearch.html">Quick Search help</a>
+              </li>
+              <li class="bz_default_hidden" id="quicksearch_plugin">
+                |
+                <a href="javascript:window.external.AddSearchProvider('https://bugzilla.mozilla.org/search_plugin.cgi')">
+                 Install the Quick Search plugin
+                </a>
+              </li>
+            </ul>
+            <ul class="additional_links">
+              <li>
+                <a href="http://www.bugzilla.org/docs/4.2/en/html/using.html">Bugzilla User's Guide</a>
+              </li>
+              <li>
+                |
+                <a href="page.cgi?id=release-notes.html">Release Notes</a>
+              </li><li>
+|
+<a href="page.cgi?id=etiquette.html">Bugzilla Etiquette</a>
+</li>
+<li>
+|
+<a href="https://developer.mozilla.org/en/Bug_writing_guidelines">Bug Writing Guidelines</a>
+</li>
+<li>
+|
+<a href="page.cgi?id=researchers.html">
+  Data for Researchers</a>
+</li>
+            </ul>
+          </div>
+        </form>
+        <div class="outro"></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form quicksearch_form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+    [<a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">help</a>]
+  </li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+<li><span class="separator"> | </span>
+    <a href="https://bugzilla.mozilla.org/page.cgi?id=mydashboard.html">My Dashboard</a></li><li><span class="separator"> | </span><a href="page.cgi?id=productdashboard.html">Product Dashboard</a></li>
+
+</ul>
+  </li>
+
+  
+    
+    <li id="links-saved">
+      <ul class="links">
+          <li><a href="buglist.cgi?bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;emailtype1=exact&amp;email1=pranav.maddi%40gmail.com&amp;field0-0-0=bug_status&amp;type0-0-0=notequals&amp;value0-0-0=UNCONFIRMED&amp;field0-0-1=reporter&amp;type0-0-1=equals&amp;value0-0-1=pranav.maddi%40gmail.com">My Bugs</a></li>
+
+            <li><span class="separator">| </span>
+            <a href="buglist.cgi?cmdtype=runnamed&amp;namedcmd=apporval-mozilla-aurora%3F">apporval-mozilla-aurora?</a></li>
+            <li><span class="separator">| </span>
+            <a href="buglist.cgi?cmdtype=runnamed&amp;namedcmd=apporval-mozilla-beta%3F">apporval-mozilla-beta?</a></li>
+            <li><span class="separator">| </span>
+            <a href="buglist.cgi?cmdtype=runnamed&amp;namedcmd=tracking-firefox-31%3D%2B">tracking-firefox-31=+</a></li>
+            <li><span class="separator">| </span>
+            <a href="buglist.cgi?cmdtype=runnamed&amp;namedcmd=Tracking%3F">Tracking?</a></li>
+            <br>
+          <li>
+            <a href="buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=Bugs%20Filed%20Today&amp;sharer_id=1"
+               class="shared"
+               title="Shared by Nobody; OK to take it and work on it &lt;nobody&#64;mozilla.org&gt;"
+               >Bugs&nbsp;Filed&nbsp;Today</a></li>
+      </ul>
+    </li>
+
+  
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+<div id="privacy-policy">
+  <a href="https://www.mozilla.org/privacy/websites/" target="_blank">Privacy Policy</a>
+</div>
+
+<!-- </body> -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="//cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.min.js"></script>
