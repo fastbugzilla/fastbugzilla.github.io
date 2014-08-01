@@ -31,10 +31,11 @@ $(document).ready(function() {
 
     if (location.search != '') {
         loadURL( location.href );
+    } else {
+        $( "#find" ).click(function () {
+            loadURL( $("#quicksearch_main").val() );
+        });
     }
-    $( "#find" ).click(function () {
-        loadURL( $("#quicksearch_main").val() );
-    });
     
 })
 
