@@ -34,7 +34,7 @@ $(document).ready(function() {
         loadURL( $("#quicksearch_main").val() );
     });
     if (location.search !== '') {
-         loadURL( location.href );
+        loadURL( location.href );
     }
     
 })
